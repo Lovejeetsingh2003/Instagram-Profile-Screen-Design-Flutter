@@ -16,6 +16,7 @@ class _InstaPageState extends State<InstaPage> {
       body: Container(
         margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -168,30 +169,64 @@ class _InstaPageState extends State<InstaPage> {
                 ),
               ],
             ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Icon(
-                  Icons.grid_on_outlined,
-                  size: 50,
-                  color: Colors.black,
-                ),
-                Icon(
-                  Icons.video_camera_back_outlined,
-                  size: 50,
-                  color: Colors.black,
-                ),
-                Icon(
-                  Icons.assignment_ind,
-                  size: 50,
-                  color: Colors.black,
-                ),
-              ],
+            Container(
+              margin: EdgeInsets.fromLTRB(0, 20, 0, 10),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Icon(
+                    Icons.grid_on_outlined,
+                    size: 50,
+                    color: Colors.black,
+                  ),
+                  Icon(
+                    Icons.video_camera_back_outlined,
+                    size: 50,
+                    color: Colors.black,
+                  ),
+                  Icon(
+                    Icons.assignment_ind,
+                    size: 50,
+                    color: Colors.black,
+                  ),
+                ],
+              ),
             ),
             const Expanded(child: GridScreen())
           ],
         ),
       ),
+      bottomNavigationBar: const BottomAppBar(
+          child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Icon(
+            Icons.home_rounded,
+            size: 40,
+            color: Colors.black,
+          ),
+          Icon(
+            Icons.search,
+            size: 40,
+            color: Colors.black,
+          ),
+          Icon(
+            Icons.add_box_outlined,
+            size: 40,
+            color: Colors.black,
+          ),
+          Icon(
+            Icons.video_camera_back,
+            size: 40,
+            color: Colors.black,
+          ),
+          Icon(
+            Icons.account_circle,
+            size: 40,
+            color: Colors.black,
+          ),
+        ],
+      )),
     );
   }
 }

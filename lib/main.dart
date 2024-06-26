@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:insta_screen/insta_page.dart';
+import 'package:insta_screen/splash_screen.dart';
+import 'package:insta_screen/url_launcher.dart';
 
 void main() {
   runApp(const MyApp());
