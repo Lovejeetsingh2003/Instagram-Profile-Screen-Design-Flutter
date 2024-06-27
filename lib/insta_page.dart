@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:insta_screen/grid_screen.dart';
+import 'package:insta_screen/insta_post_object.dart';
+import 'package:insta_screen/post_screen.dart';
 
 class InstaPage extends StatefulWidget {
   const InstaPage({super.key});
@@ -9,6 +10,78 @@ class InstaPage extends StatefulWidget {
 }
 
 class _InstaPageState extends State<InstaPage> {
+  var instaPostArray = <InstaPostObject>[
+    InstaPostObject(
+      image:
+          "https://th.bing.com/th/id/OIP.FxsXKdSKWcj8TysVqZohKQHaJ3?w=121&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      content: "First Image",
+      shareCount: 4,
+      likes: 10,
+    ),
+    InstaPostObject(
+      image:
+          "https://th.bing.com/th/id/OIP.S3WheV20z38EfxcbdtIYXAHaEK?rs=1&pid=ImgDetMain",
+      content: "Second Image",
+      shareCount: 4,
+      likes: 10,
+    ),
+    InstaPostObject(
+      image:
+          "https://th.bing.com/th/id/OIP.zm-66IEbGJFjzek5gPWzLgHaEK?pid=ImgDet&w=185&h=104&c=7&dpr=1.3",
+      content: "Third Image",
+      shareCount: 4,
+      likes: 10,
+    ),
+    InstaPostObject(
+      image:
+          "https://th.bing.com/th/id/OIP.IxBbhICDbSCRO2F1UqVKowHaGD?w=186&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      content: "Fourth Image",
+      shareCount: 4,
+      likes: 10,
+    ),
+    InstaPostObject(
+      image:
+          "https://th.bing.com/th/id/OIP.DIOcLIfB92mG-ZXVad8suQHaD4?w=330&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      content: "Fifth Image",
+      shareCount: 4,
+      likes: 10,
+    ),
+    InstaPostObject(
+      image:
+          "https://th.bing.com/th/id/OIP.dJy_nhrPSJ_PMCPe31SqbwHaFj?w=223&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      content: "Six Image",
+      shareCount: 4,
+      likes: 10,
+    ),
+    InstaPostObject(
+      image:
+          "https://th.bing.com/th/id/OIP.Vz5LSlztt6BdHBW7y8QKygHaJ3?w=126&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      content: "Seven Image",
+      shareCount: 4,
+      likes: 10,
+    ),
+    InstaPostObject(
+      image:
+          "https://th.bing.com/th/id/OIP.GUkrfwglRRUTT1-eJCAlLgHaDw?w=335&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      content: "Eight Image",
+      shareCount: 4,
+      likes: 10,
+    ),
+    InstaPostObject(
+      image:
+          "https://th.bing.com/th/id/OIP.DN4qt8wlDWEDwb063gF9uwAAAA?w=255&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      content: "Nine Image",
+      shareCount: 4,
+      likes: 10,
+    ),
+    InstaPostObject(
+      image:
+          "https://th.bing.com/th/id/OIP.x5JSjtMZWqaQMPR9Okq__AHaEK?w=284&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      content: "Tenth Image",
+      shareCount: 4,
+      likes: 10,
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +98,7 @@ class _InstaPageState extends State<InstaPage> {
                   const Row(
                     children: [
                       Text(
-                        "Username",
+                        "Virat.Kohli",
                         style: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.w500,
@@ -79,12 +152,12 @@ class _InstaPageState extends State<InstaPage> {
                   children: [
                     CircleAvatar(
                       radius: 40,
-                      backgroundImage: AssetImage("assets/images/image.jpeg"),
+                      backgroundImage: AssetImage("assets/images/image.jpg"),
                     ),
                     Column(
                       children: [
                         Text(
-                          "574",
+                          "1697",
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -104,7 +177,7 @@ class _InstaPageState extends State<InstaPage> {
                     Column(
                       children: [
                         Text(
-                          "1,080",
+                          "269M",
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -124,7 +197,7 @@ class _InstaPageState extends State<InstaPage> {
                     Column(
                       children: [
                         Text(
-                          "712",
+                          "302",
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -151,7 +224,7 @@ class _InstaPageState extends State<InstaPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Username",
+                        "Virat.Kohli",
                         textAlign: TextAlign.start,
                         style: TextStyle(
                             fontSize: 28,
@@ -159,7 +232,7 @@ class _InstaPageState extends State<InstaPage> {
                             color: Colors.black),
                       ),
                       Text(
-                        "From Italy Living in California",
+                        "Carpediem!",
                         textAlign: TextAlign.start,
                         style: TextStyle(
                             fontSize: 20,
@@ -193,7 +266,32 @@ class _InstaPageState extends State<InstaPage> {
                   ],
                 ),
               ),
-              GridScreen()
+              GridView.builder(
+                shrinkWrap: true,
+                itemCount: instaPostArray.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3),
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => PostScreen(
+                              instaPostObject: instaPostArray[index]),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      color: Colors.black12,
+                      padding: const EdgeInsets.all(3),
+                      child: Image(
+                        fit: BoxFit.fitHeight,
+                        image: NetworkImage(instaPostArray[index].image ?? ""),
+                      ),
+                    ),
+                  );
+                },
+              ),
             ],
           ),
         ),
